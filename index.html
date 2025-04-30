@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moreli Engenharia Elétrica</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+  
+
+<body>
+  <header>
+    <div class="container">
+      <h1>Moreli Engenharia Elétrica</h1>
+      <nav>
+        <ul class="menu">
+          <li><a href="#">Início</a></li>
+          <li><a href="Sobre.html">Sobre</a></li>
+          <li><a href="https://api.whatsapp.com/send/?phone=5561981826979">whatsapp</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="banner">
+    <div class="container">
+      <h2>Energia com eficiência e confiança</h2>
+      <p>Soluções elétricas para sua empresa</p>
+    </div>
+  </section>
+  <div style="width: 80%; text-align: center; margin: auto;">
+  <section class="carousel-container">
+    <ul class="carousel">
+        
+      <li><a href="#"><img src="001.png" alt="banner"></a></li>
+      <li><a href="#"><img src="002.png"alt="banner"></a></li>
+      <li><a href="#"><img src="003.png"alt="banner"></a></li>
+   
+    
+    </ul>
+
+    <div class="buttons">
+      <button id="prev">&#10094;</button>
+      <button id="next">&#10095;</button>
+    </div>
+
+    <div class="indicators" id="indicators"></div>
+  </section>
+      </div>
+
+  <section id="servicos" class="servicos">
+    <div class="container">
+      <h2 style=" color: white;">Nossos Serviços</h2>
+      <div class="grid">
+        <div class="servico">
+          <h3>Projetos Elétricos</h3>
+          <p>Planejamento completo com segurança e eficiência.</p>
+        </div>
+        <div class="servico">
+          <h3>Instalações Residenciais e Industriais</h3>
+          <p>Execução profissional e com garantia de qualidade.</p>
+        </div>
+        <div class="servico">
+          <h3>Manutenção e Correção</h3>
+          <p>Diagnóstico e solução de falhas elétricas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre" class="sobre">
+    <div  class="container">
+      <h2>Sobre a Moreli</h2>
+     <p>A Moreli Engenharia Elétrica é uma empresa especializada em soluções elétricas inteligentes para empresas de todos os portes. Atuamos com foco em eficiência, segurança e conformidade técnica, oferecendo projetos personalizados que atendem às necessidades específicas de cada cliente corporativo.</p>
+    <p>Com uma equipe altamente capacitada e anos de experiência no setor, garantimos qualidade em todas as etapas: do planejamento à execução. Nossa atuação abrange instalações industriais, manutenção preventiva, correção de fator de potência, automação e sistemas de proteção elétrica.</p>
+        <p>Somos reconhecidos pela seriedade, compromisso com prazos e excelência técnica. A confiança dos nossos parceiros é resultado do nosso trabalho transparente e eficaz, sempre alinhado às normas vigentes e às melhores práticas de engenharia elétrica.
+        </p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Moreli Engenharia Elétrica. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+   <script>
+    const carousel = document.querySelector('.carousel');
+    const indicatorsContainer = document.getElementById('indicators');
+    const slides = document.querySelectorAll('.carousel li');
+    const totalSlides = slides.length;
+    let currentIndex = 0;
+
+    // Criar indicadores
+    for (let i = 0; i < totalSlides; i++) {
+      const dot = document.createElement('span');
+      dot.classList.add('indicator');
+      if (i === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => goToSlide(i));
+      indicatorsContainer.appendChild(dot);
+    }
+
+    function updateCarousel() {
+      carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+      document.querySelectorAll('.indicator').forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentIndex);
+      });
+    }
+
+    function goToSlide(index) {
+      currentIndex = index;
+      updateCarousel();
+    }
+
+    document.getElementById('prev').addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+      updateCarousel();
+    });
+
+    document.getElementById('next').addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % totalSlides;
+      updateCarousel();
+    });
+  </script>
+      
+</body>
+</html>

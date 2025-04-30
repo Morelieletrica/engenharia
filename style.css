@@ -1,0 +1,184 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+  background-color: #1a1a1a;
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+header {
+  background-color: #1a1a1a;
+  color: black;
+  padding: 20px 0;
+  text-align: center;
+}
+
+header h1 {
+  margin-bottom: 10px;
+  color: white;;
+  text-shadow: 2px 2px 30px #FE7929;
+}
+
+nav .menu {
+  display: flex;
+  justify-content: center; /* centraliza horizontalmente */
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+nav .menu li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+ text-shadow: 2px 2px 5px #FE7929;
+}
+
+nav .menu li a:hover {
+  color: #f5d142;
+}
+
+.banner {
+  background: url('banner-eletrica.png') center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.banner h2 {
+  font-size: 2.5em;
+}
+.sobre {
+    color: white;
+}
+
+.servicos, .sobre {
+  padding: 60px 20px;
+}
+
+.servicos h2, .sobre h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.servico {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  width: 300px;
+  text-align: center;
+}
+.servico h3 {
+     text-shadow: 0px 0px 1px red;
+}
+
+footer {
+  background-color: white;
+  color:black;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .banner h2 {
+    font-size: 2em;
+  }
+}
+/* carrossel */
+
+     
+  
+    .carousel-container {
+      position: relative;
+      max-width: 800px;
+      margin: 40px auto;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 10px 15px rgba(50, 0, 0, 0.9);
+      background: #990000;
+    }
+
+    .carousel {
+      display: flex;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .carousel li {
+      list-style: none;
+      min-width: 100%;
+      box-sizing: border-box;
+    }
+
+    .carousel li a img {
+      width: 100%;
+      display: block;
+      border-radius: 12px;
+    }
+
+    .buttons {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      padding: 0 20px;
+    }
+
+    .buttons button {
+      background-color: rgba(0,0,0,0.4);
+      border: none;
+      color: white;
+      font-size: 24px;
+      padding: 8px 12px;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    .indicators {
+      display: flex;
+      justify-content: center;
+      margin: 10px 0;
+    }
+
+    .indicator {
+      height: 10px;
+      width: 10px;
+      margin: 0 5px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .indicator.active {
+      background-color: #333;
+    }
